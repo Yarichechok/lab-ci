@@ -2,12 +2,14 @@ import pytest
 
 from shop.cart import Cart
 
+
 class StubRateProvider:
     def __init__(self, rate: float) -> None:
         self.rate = rate
 
     def get_rate(self, currency: str) -> float:
         return self.rate
+
 
 def test_empty_cart_has_zero_items() -> None:
     cart = Cart()
@@ -52,6 +54,7 @@ def test_add_same_name_keeps_original_price() -> None:
 
 def test_fixture_contains_six_items(cart_with_items: Cart) -> None:
     assert cart_with_items.items_count() == 6
+
 
 @pytest.mark.parametrize(
     ("discount", "expected"),
