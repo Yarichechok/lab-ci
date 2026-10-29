@@ -138,7 +138,7 @@ def test_most_expensive_empty_cart_returns_none() -> None:
 
 def test_most_expensive_returns_item_with_highest_price() -> None:
     cart = Cart()
-    cart.add( "book",price=200.0,qty=2 )
+    cart.add("book", price=200.0, qty=2)
     cart.add("pen", price=15.0, qty=4)
 
     result = cart.most_expensive()
